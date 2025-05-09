@@ -87,24 +87,10 @@ function Stopwatch() {
           </p>
         </div>
 
-        {/* Navigation Buttons */}
-        <div className="text-center mb-8 flex flex-col md:flex-row items-center justify-center gap-4">
+        {/* Navigation Button */}
+        <div className="text-center mb-8">
           <button 
             onClick={() => navigate('/')}
-            className="bg-gradient-to-r from-gray-800 to-gray-900 text-white font-bold py-3 px-8 rounded-lg text-lg 
-            shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:shadow-[0_0_20px_rgba(0,0,0,0.3)] 
-            border border-gray-700/50 transition-all duration-300 
-            backdrop-blur-lg backdrop-brightness-125 
-            hover:scale-105 hover:from-gray-700 hover:to-gray-800
-            relative overflow-hidden
-            before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/5 before:to-transparent
-            before:translate-x-[-200%] before:transition-transform before:duration-[0.7s] before:hover:translate-x-[200%]
-            active:scale-95"
-          >
-            Back to NEET 2025
-          </button>
-          <button 
-            onClick={() => navigate('/neet-2026')}
             className="bg-gradient-to-r from-gray-800 to-gray-900 text-white font-bold py-3 px-8 rounded-lg text-lg 
             shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:shadow-[0_0_20px_rgba(0,0,0,0.3)] 
             border border-gray-700/50 transition-all duration-300 
@@ -202,7 +188,7 @@ function Stopwatch() {
         {/* Footer */}
         <footer className="text-center text-sm text-gray-400 py-4">
           <p>Developed By EpexAyush</p>
-          <p>© 2025 NEET Countdown Timer. All rights reserved.</p>
+          <p>© 2026 NEET Countdown Timer. All rights reserved.</p>
         </footer>
       </div>
     </div>

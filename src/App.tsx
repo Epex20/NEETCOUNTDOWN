@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { Clock, BookOpen, Calendar, MessageCircle, Link } from 'lucide-react';
-import Neet2026 from './Neet2026';
 import RealTimeClock from './components/RealTimeClock';
 import Stopwatch from './components/Stopwatch';
 import PrivacyPolicy from './components/PrivacyPolicy';
@@ -18,16 +17,16 @@ function Home() {
   });
 
   React.useEffect(() => {
-    document.title = "NEET 2025 Countdown Timer - Track Your Exam Preparation";
+    document.title = "NEET 2026 Countdown Timer - Plan Your Preparation";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Get accurate countdown to NEET 2025 exam. Track your preparation time with our interactive timer and access comprehensive exam information.");
+      metaDescription.setAttribute("content", "Get accurate countdown to NEET 2026 exam. Plan your long-term preparation with our interactive timer and comprehensive exam information.");
     }
   }, []);
 
   React.useEffect(() => {
-    const targetDate = new Date('2025-05-04T14:00:00+05:30'); // Indian time (IST)
+    const targetDate = new Date('2026-05-03T14:00:00+05:30'); // Indian time (IST)
 
     const calculateTimeLeft = () => {
       const now = new Date();
@@ -55,10 +54,10 @@ function Home() {
         <RealTimeClock />
         <div className="text-center mb-12 pt-8">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-            NEET UG 2025 COUNTDOWN
+            NEET UG 2026 COUNTDOWN
           </h1>
           <p className="text-lg md:text-xl text-gray-300">
-           Plan your studies efficiently with an interactive NEET 2025 countdown clock.
+            Plan your studies efficiently with an interactive NEET 2026 countdown clock.
           </p>
         </div>
 
@@ -84,10 +83,10 @@ function Home() {
           </div>
         </div>
 
-        {/* Navigation Buttons */}
-        <div className="text-center mb-12 flex flex-row items-center justify-center gap-2 sm:gap-4">
+        {/* Navigation Button */}
+        <div className="text-center mb-12">
           <button 
-            onClick={() => navigate('/neet-2026')}
+            onClick={() => navigate('/stopwatch')}
             className="bg-gradient-to-r from-gray-800 to-gray-900 text-white font-bold py-2 sm:py-3 px-4 sm:px-8 rounded-lg text-sm sm:text-lg 
             shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:shadow-[0_0_20px_rgba(0,0,0,0.3)] 
             border border-gray-700/50 transition-all duration-300 
@@ -98,7 +97,7 @@ function Home() {
             before:translate-x-[-200%] before:transition-transform before:duration-[0.7s] before:hover:translate-x-[200%]
             active:scale-95"
           >
-            NEET 2026
+            Stopwatch
           </button>
         </div>
 
@@ -109,14 +108,14 @@ function Home() {
             <h2 className="text-2xl font-semibold">Description</h2>
           </div>
           <p className="text-gray-300 leading-relaxed mb-6">
-            This website is designed for NEET 2025 aspirants to keep track of their exam countdown in a 
+            This website is designed for NEET 2026 aspirants to keep track of their exam countdown in a 
             visually appealing and interactive way. The live countdown timer displays the remaining days, 
-            hours, minutes, and seconds until NEET UG 2025.
+            hours, minutes, and seconds until NEET UG 2026.
           </p>
           <div className="grid md:grid-cols-2 gap-4 text-sm">
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5 text-purple-400" />
-              <span>Date: Sunday, May 04, 2025</span>
+              <span>Date: Sunday, May 03, 2026</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-5 h-5 text-purple-400" />
@@ -146,12 +145,12 @@ function Home() {
         {/* NEET Guide Section */}
         <div className="max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-lg rounded-xl p-8 mb-12 border border-gray-800">
           <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-            NEET 2025: Ultimate Student Guide
+            NEET 2026: Ultimate Student Guide
           </h2>
 
           <div className="space-y-8">
             <section>
-              <h3 className="text-2xl font-bold mb-4 text-purple-400">Who Should Appear for NEET 2025?</h3>
+              <h3 className="text-2xl font-bold mb-4 text-purple-400">Who Should Appear for NEET 2026?</h3>
               <p className="text-gray-300 mb-4">
                 NEET UG is not just an entrance exam — it's your ticket to MBBS, BDS, AYUSH courses (BAMS, BUMS, BHMS, etc.), 
                 and other paramedical programs in India and even abroad.
@@ -169,25 +168,25 @@ function Home() {
               <h3 className="text-2xl font-bold mb-4 text-purple-400">Key Dates You Can't Miss</h3>
               <div className="grid gap-3">
                 <div className="bg-gray-800/50 p-3 rounded-lg">
-                  <span className="font-semibold">Form Release:</span> 7th February 2025
+                  <span className="font-semibold">Form Release:</span> 6th February 2026
                 </div>
                 <div className="bg-gray-800/50 p-3 rounded-lg">
-                  <span className="font-semibold">Last Date to Apply:</span> 7th March 2025
+                  <span className="font-semibold">Last Date to Apply:</span> 6th March 2026
                 </div>
                 <div className="bg-gray-800/50 p-3 rounded-lg">
-                  <span className="font-semibold">Correction Window:</span> 9th – 11th March 2025
+                  <span className="font-semibold">Correction Window:</span> 8th – 10th March 2026
                 </div>
                 <div className="bg-gray-800/50 p-3 rounded-lg">
-                  <span className="font-semibold">City Allotment Slip:</span> 26th April 2025
+                  <span className="font-semibold">City Allotment Slip:</span> 25th April 2026
                 </div>
                 <div className="bg-gray-800/50 p-3 rounded-lg">
-                  <span className="font-semibold">Admit Card Release:</span> 1st May 2025
+                  <span className="font-semibold">Admit Card Release:</span> 30th April 2026
                 </div>
                 <div className="bg-gray-800/50 p-3 rounded-lg">
-                  <span className="font-semibold">Exam Date:</span> 4th May 2025
+                  <span className="font-semibold">Exam Date:</span> 3rd May 2026
                 </div>
                 <div className="bg-gray-800/50 p-3 rounded-lg">
-                  <span className="font-semibold">Result (Tentative):</span> 14th June 2025
+                  <span className="font-semibold">Result (Tentative):</span> 13th June 2026
                 </div>
               </div>
             </section>
@@ -216,7 +215,7 @@ function Home() {
             <section>
               <h3 className="text-2xl font-bold mb-4 text-purple-400">Eligibility Criteria</h3>
               <ul className="list-disc pl-6 space-y-2 text-gray-300">
-                <li>Be at least <strong>17 years old by 31st December 2025</strong></li>
+                <li>Be at least <strong>17 years old by 31st December 2026</strong></li>
                 <li>Have passed or be appearing in <strong>Class 12 with Physics, Chemistry, Biology/Biotech & English</strong></li>
                 <li>Score a minimum:
                   <ul className="list-disc pl-6 mt-2">
@@ -304,7 +303,7 @@ function Home() {
         {/* Footer */}
         <footer className="text-center text-sm text-gray-400 py-4">
           <p>Developed By EpexAyush</p>
-          <p>© 2025 NEET Countdown Timer. All rights reserved.</p>
+          <p>© 2026 NEET Countdown Timer. All rights reserved.</p>
           <nav className="mt-4">
             <a href="/privacy-policy" className="text-purple-400 hover:text-purple-300 mx-2">Privacy Policy</a>
             <a href="/terms-and-conditions" className="text-purple-400 hover:text-purple-300 mx-2">Terms & Conditions</a>
@@ -321,7 +320,6 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/neet-2026" element={<Neet2026 />} />
         <Route path="/stopwatch" element={<Stopwatch />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
