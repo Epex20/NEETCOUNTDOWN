@@ -4,7 +4,7 @@ import { Mail, MessageCircle } from 'lucide-react';
 
 function Contact() {
   React.useEffect(() => {
-    document.title = "Contact Us | NEET Exam Countdown - Get Support and Assistance";
+    document.title = "Contact Us | NEET 2026 Exam Countdown - Get Support and Assistance";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -84,10 +84,8 @@ function Contact() {
 
         <footer className="text-center text-sm text-gray-400 py-4">
           <p>Developed By EpexAyush</p>
-          <p>© 2025 NEET Countdown Timer. All rights reserved.</p>
+          <p>© 2026 NEET Countdown Timer. All rights reserved.</p>
           <nav className="mt-4">
-            <a href="/" className="text-purple-400 hover:text-purple-300 mx-2">NEET 2025</a>
-            <a href="/neet-2026" className="text-purple-400 hover:text-purple-300 mx-2">NEET 2026</a>
             <a href="/privacy-policy" className="text-purple-400 hover:text-purple-300 mx-2">Privacy Policy</a>
             <a href="/terms-and-conditions" className="text-purple-400 hover:text-purple-300 mx-2">Terms & Conditions</a>
             <a href="/contact" className="text-purple-400 hover:text-purple-300 mx-2">Contact Us</a>

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 function PrivacyPolicy() {
   React.useEffect(() => {
-    document.title = "Privacy Policy | NEET Exam Countdown - Updated Feb 18, 2025";
+    document.title = "Privacy Policy | NEET 2026 Exam Countdown - Updated Feb 18, 2025";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -39,7 +39,6 @@ function PrivacyPolicy() {
               <h2 className="text-2xl font-bold mb-4 text-purple-400">2. Information We Collect</h2>
               <p className="mb-4">We collect minimal information to provide you with the best possible experience:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Study timer data (stored locally in your browser)</li>
                 <li>Browser type and version</li>
                 <li>Time zone setting</li>
                 <li>Browser plug-in types and versions</li>
@@ -52,7 +51,6 @@ function PrivacyPolicy() {
               <p className="mb-4">We use the collected information to:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Provide and maintain our countdown timer service</li>
-                <li>Save your study timer progress locally</li>
                 <li>Improve our website functionality</li>
                 <li>Monitor and analyze usage patterns</li>
               </ul>
@@ -60,15 +58,10 @@ function PrivacyPolicy() {
 
             <section>
               <h2 className="text-2xl font-bold mb-4 text-purple-400">4. Data Storage</h2>
-              <p className="mb-4">
-                All study timer data is stored locally in your browser using localStorage. We do not store this 
-                information on our servers. This data persists until you:
+              <p>
+                We do not store any personal information on our servers. Any data collected is purely for 
+                functional purposes and remains on your local device.
               </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Clear your browser data</li>
-                <li>Use the reset function in the study timer</li>
-                <li>Manually clear your browser's localStorage</li>
-              </ul>
             </section>
 
             <section>
@@ -92,7 +85,6 @@ function PrivacyPolicy() {
               <p className="mb-4">You have the right to:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Access your locally stored data</li>
-                <li>Reset or delete your study timer data</li>
                 <li>Clear your browser data at any time</li>
               </ul>
             </section>
@@ -133,10 +125,8 @@ function PrivacyPolicy() {
 
         <footer className="text-center text-sm text-gray-400 py-4">
           <p>Developed By EpexAyush</p>
-          <p>© 2025 NEET Countdown Timer. All rights reserved.</p>
+          <p>© 2026 NEET Countdown Timer. All rights reserved.</p>
           <nav className="mt-4">
-            <a href="/" className="text-purple-400 hover:text-purple-300 mx-2">NEET 2025</a>
-            <a href="/neet-2026" className="text-purple-400 hover:text-purple-300 mx-2">NEET 2026</a>
             <a href="/privacy-policy" className="text-purple-400 hover:text-purple-300 mx-2">Privacy Policy</a>
             <a href="/terms-and-conditions" className="text-purple-400 hover:text-purple-300 mx-2">Terms & Conditions</a>
             <a href="/contact" className="text-purple-400 hover:text-purple-300 mx-2">Contact Us</a>

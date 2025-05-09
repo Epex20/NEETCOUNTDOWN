@@ -1,14 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Clock, BookOpen, Calendar, MessageCircle, Link } from 'lucide-react';
 import RealTimeClock from './components/RealTimeClock';
-import Stopwatch from './components/Stopwatch';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsAndConditions from './components/TermsAndConditions';
 import Contact from './components/Contact';
 
 function Home() {
-  const navigate = useNavigate();
   const [timeLeft, setTimeLeft] = React.useState({
     days: 0,
     hours: 0,
@@ -81,24 +79,6 @@ function Home() {
               <div className="text-[10px] sm:text-sm uppercase tracking-wide">Seconds</div>
             </div>
           </div>
-        </div>
-
-        {/* Navigation Button */}
-        <div className="text-center mb-12">
-          <button 
-            onClick={() => navigate('/stopwatch')}
-            className="bg-gradient-to-r from-gray-800 to-gray-900 text-white font-bold py-2 sm:py-3 px-4 sm:px-8 rounded-lg text-sm sm:text-lg 
-            shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:shadow-[0_0_20px_rgba(0,0,0,0.3)] 
-            border border-gray-700/50 transition-all duration-300 
-            backdrop-blur-lg backdrop-brightness-125 
-            hover:scale-105 hover:from-gray-700 hover:to-gray-800
-            relative overflow-hidden
-            before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/5 before:to-transparent
-            before:translate-x-[-200%] before:transition-transform before:duration-[0.7s] before:hover:translate-x-[200%]
-            active:scale-95"
-          >
-            Stopwatch
-          </button>
         </div>
 
         {/* Info Cards */}
@@ -320,7 +300,6 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/stopwatch" element={<Stopwatch />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/contact" element={<Contact />} />

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 function TermsAndConditions() {
   React.useEffect(() => {
-    document.title = "Terms and Conditions | NEET Exam Countdown - Updated Feb 18, 2025";
+    document.title = "Terms and Conditions | NEET 2026 Exam Countdown - Updated Feb 18, 2025";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -15,6 +15,7 @@ function TermsAndConditions() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white">
+      
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -125,10 +126,8 @@ function TermsAndConditions() {
 
         <footer className="text-center text-sm text-gray-400 py-4">
           <p>Developed By EpexAyush</p>
-          <p>© 2025 NEET Countdown Timer. All rights reserved.</p>
+          <p>© 2026 NEET Countdown Timer. All rights reserved.</p>
           <nav className="mt-4">
-            <a href="/" className="text-purple-400 hover:text-purple-300 mx-2">NEET 2025</a>
-            <a href="/neet-2026" className="text-purple-400 hover:text-purple-300 mx-2">NEET 2026</a>
             <a href="/privacy-policy" className="text-purple-400 hover:text-purple-300 mx-2">Privacy Policy</a>
             <a href="/terms-and-conditions" className="text-purple-400 hover:text-purple-300 mx-2">Terms & Conditions</a>
             <a href="/contact" className="text-purple-400 hover:text-purple-300 mx-2">Contact Us</a>
