@@ -26,16 +26,6 @@ function Blog() {
       image: "https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg"
     },
     {
-      id: 2,
-      title: "Essential Biology Topics for NEET 2025",
-      excerpt: "Detailed breakdown of high-yield Biology topics and concepts that are frequently asked in NEET examinations.",
-      author: "Dr. Priya Singh",
-      date: "March 12, 2024",
-      readTime: "10 min read",
-      category: "Biology",
-      image: "https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg"
-    },
-    {
       id: 3,
       title: "Chemistry Preparation Strategies by NEET Toppers",
       excerpt: "Learn effective Chemistry preparation techniques and tips shared by previous year NEET top rankers.",

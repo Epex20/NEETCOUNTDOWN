@@ -93,7 +93,7 @@ function Neet2026() {
             before:translate-x-[-200%] before:transition-transform before:duration-[0.7s] before:hover:translate-x-[200%]
             active:scale-95"
           >
-            Back to NEET 2025
+            Back to Home
           </button>
         </div>
 

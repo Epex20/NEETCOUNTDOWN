@@ -32,7 +32,7 @@ function RealTimeClock() {
   };
 
   return (
-    <div className="fixed top-0 right-0 m-2 sm:m-4 bg-gray-900/80 backdrop-blur-lg rounded-lg p-2 sm:p-3 border border-gray-800 text-white z-[9999]">
+    <div className="bg-gray-900/80 backdrop-blur-lg rounded-lg p-2 sm:p-3 border border-gray-800 text-white">
       <div className="flex items-center gap-3 sm:gap-4">
         <div className="text-base sm:text-lg font-bold">{formatDigitalTime(time)}</div>
         <div className="text-xs sm:text-sm text-gray-300">{formatTimeText(time)}</div>

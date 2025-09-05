@@ -43,42 +43,6 @@ function BlogPost() {
       category: "Physics",
       image: "https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg"
     },
-    2: {
-      title: "Essential Biology Topics for NEET 2025",
-      content: `
-        <h2>Key Focus Areas</h2>
-        <p>Biology forms the backbone of NEET examination. Here are the most important topics you need to master.</p>
-
-        <h2>Human Physiology</h2>
-        <ul>
-          <li>Digestive System</li>
-          <li>Respiratory System</li>
-          <li>Circulatory System</li>
-          <li>Nervous System</li>
-        </ul>
-
-        <h2>Genetics and Evolution</h2>
-        <ul>
-          <li>Mendelian Genetics</li>
-          <li>Molecular Basis of Inheritance</li>
-          <li>Evolution and Adaptations</li>
-          <li>Human Evolution</li>
-        </ul>
-
-        <h2>Plant Biology</h2>
-        <ul>
-          <li>Plant Anatomy</li>
-          <li>Plant Physiology</li>
-          <li>Plant Reproduction</li>
-          <li>Plant Classification</li>
-        </ul>
-      `,
-      author: "Dr. Priya Singh",
-      date: "March 12, 2024",
-      readTime: "10 min read",
-      category: "Biology",
-      image: "https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg"
-    },
     3: {
       title: "Chemistry Preparation Strategies by NEET Toppers",
       content: `
@@ -153,7 +117,7 @@ function BlogPost() {
     }
   };
 
-  const post = blogPosts[id];
+  const post = blogPosts[Number(id) as keyof typeof blogPosts];
 
   if (!post) {
     return (

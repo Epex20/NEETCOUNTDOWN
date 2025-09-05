@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Critical CSS - Inline only essential styles */
+*,::before,::after{box-sizing:border-box;border:0 solid #e5e7eb}
+html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,sans-serif}
+body{margin:0;line-height:inherit}
+
+/* Custom utilities for performance */
+.bg-gradient-dark{background:linear-gradient(to bottom right,#030712,#111827,#000)}
+.bg-glass{background:rgba(17,24,39,0.8);backdrop-filter:blur(16px)}
+.text-gradient{background:linear-gradient(to right,#c084fc,#f472b6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.shadow-glow{box-shadow:0 0 15px rgba(0,0,0,0.2)}
+.shadow-glow-hover{box-shadow:0 0 20px rgba(0,0,0,0.3)}
+.transition-smooth{transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}
+.btn-glass{background:linear-gradient(to right,#1f2937,#111827);border:1px solid rgba(55,65,81,0.5);backdrop-filter:blur(16px);transition:all 0.3s}
+.btn-glass:hover{transform:scale(1.05);background:linear-gradient(to right,#374151,#1f2937)}
