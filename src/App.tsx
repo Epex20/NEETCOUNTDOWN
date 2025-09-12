@@ -2,14 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { BookOpen, Clock, Calendar, Target, Award } from 'lucide-react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import HeroSection from './components/HeroSection';
-import SchemaMarkup from './components/SchemaMarkup';
-import PrivacyPolicy from './components/PrivacyPolicy';
-import TermsAndConditions from './components/TermsAndConditions';
-import Contact from './components/Contact';
-import AboutNeet2026 from './components/AboutNeet2026';
+
+// Lazy load components for better performance
+const Header = React.lazy(() => import('./components/Header'));
+const Footer = React.lazy(() => import('./components/Footer'));
+const HeroSection = React.lazy(() => import('./components/HeroSection'));
+const SchemaMarkup = React.lazy(() => import('./components/SchemaMarkup'));
+const PrivacyPolicy = React.lazy(() => import('./components/PrivacyPolicy'));
+const TermsAndConditions = React.lazy(() => import('./components/TermsAndConditions'));
+const Contact = React.lazy(() => import('./components/Contact'));
+const AboutNeet2026 = React.lazy(() => import('./components/AboutNeet2026'));
 
 function Home() {
   const [timeLeft, setTimeLeft] = React.useState({
@@ -28,28 +30,35 @@ function Home() {
     }
   }, []);
 
+  const targetDate = React.useMemo(() => new Date('2026-05-03T14:00:00+05:30'), []);
+
+  const calculateTimeLeft = React.useCallback(() => {
+    const now = new Date();
+    const difference = targetDate.getTime() - now.getTime();
+
+    if (difference > 0) {
+      setTimeLeft({
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60)
+      });
+    } else {
+      setTimeLeft({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+      });
+    }
+  }, [targetDate]);
+
   React.useEffect(() => {
-    const targetDate = new Date('2026-05-03T14:00:00+05:30'); // Indian time (IST)
-
-    const calculateTimeLeft = () => {
-      const now = new Date();
-      const difference = targetDate.getTime() - now.getTime();
-
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60)
-        });
-      }
-    };
-
     calculateTimeLeft();
     const timer = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [calculateTimeLeft]);
 
   return (
     <>
@@ -262,8 +271,12 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-dark text-white">
       <Router>
-        <Header />
-        <main>
+        <React.Suspense fallback={<div className="h-16 bg-gray-900/30"></div>}>
+          <Header />
+        </React.Suspense>
+        <React.Suspense fallback={
+          <div className="min-h-screen flex items-center justify-center"><div className="text-white">Loading...</div></div>
+        }><main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about-neet-2026" element={<AboutNeet2026 />} />
@@ -272,7 +285,10 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
-        <Footer />
+        <React.Suspense fallback={<div className="h-20 bg-gray-900/50"></div>}>
+          <Footer />
+        </React.Suspense>
+        </React.Suspense>
       </Router>
     </div>
   );

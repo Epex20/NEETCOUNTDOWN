@@ -12,14 +12,14 @@ interface HeroSectionProps {
 
 function HeroSection({ timeLeft }: HeroSectionProps) {
   const navigate = useNavigate();
-  const [isAndroid, setIsAndroid] = React.useState(false);
-
-  React.useEffect(() => {
-    // Check if the device is Android
-    const userAgent = navigator.userAgent.toLowerCase();
-    const isAndroidDevice = /android/.test(userAgent);
-    setIsAndroid(isAndroidDevice);
-  }, []);
+  const [isAndroid, setIsAndroid] = React.useState(() => {
+    // Check if the device is Android immediately
+    if (typeof navigator !== 'undefined') {
+      const userAgent = navigator.userAgent.toLowerCase();
+      return /android/.test(userAgent);
+    }
+    return false;
+  });
 
   return (
     <div className="relative min-h-screen flex items-center justify-center px-2 sm:px-4">
@@ -79,4 +79,4 @@ function HeroSection({ timeLeft }: HeroSectionProps) {
   );
 }
 
-export default HeroSection;
+export default React.memo(HeroSection);

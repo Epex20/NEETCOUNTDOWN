@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 function RealTimeClock() {
   const [time, setTime] = useState(new Date());
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-
-    return () => clearInterval(timer);
+  const updateTime = useCallback(() => {
+    setTime(new Date());
   }, []);
 
-  const formatTimeText = (date: Date) => {
+  useEffect(() => {
+    const timer = setInterval(updateTime, 1000);
+
+    return () => clearInterval(timer);
+  }, [updateTime]);
+
+  const formatTimeText = useCallback((date: Date) => {
     const formatter = new Intl.DateTimeFormat('en-US', {
       weekday: 'long',
       month: 'long',
@@ -19,9 +21,9 @@ function RealTimeClock() {
       timeZone: 'Asia/Kolkata'
     });
     return formatter.format(date);
-  };
+  }, []);
 
-  const formatDigitalTime = (date: Date) => {
+  const formatDigitalTime = useCallback((date: Date) => {
     return date.toLocaleTimeString('en-US', {
       hour: '2-digit',
       minute: '2-digit',
@@ -29,7 +31,7 @@ function RealTimeClock() {
       hour12: true,
       timeZone: 'Asia/Kolkata'
     });
-  };
+  }, []);
 
   return (
     <div className="bg-gray-900/80 backdrop-blur-lg rounded-lg p-2 sm:p-3 border border-gray-800 text-white max-w-full">
@@ -41,4 +43,4 @@ function RealTimeClock() {
   );
 }
 
-export default RealTimeClock;
+export default React.memo(RealTimeClock);
