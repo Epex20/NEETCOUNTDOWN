@@ -23,7 +23,7 @@ function SchemaMarkup({ type }: SchemaMarkupProps) {
               "@type": "SearchAction",
               "target": {
                 "@type": "EntryPoint",
-                "urlTemplate": "https://neetexamcountdown.com/?s={search_term_string}"
+                "urlTemplate": "https://neetexamcountdown.com/search?q={search_term_string}"
               },
               "query-input": "required name=search_term_string"
             }
@@ -77,6 +77,20 @@ function SchemaMarkup({ type }: SchemaMarkupProps) {
             {
               "@type": "ReadAction",
               "target": ["https://neetexamcountdown.com/"]
+            }
+          ]
+        });
+
+        // Add BreadcrumbList Schema
+        baseSchema["@graph"].push({
+          "@type": "BreadcrumbList",
+          "@id": "https://neetexamcountdown.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://neetexamcountdown.com/"
             }
           ]
         });
@@ -182,6 +196,26 @@ function SchemaMarkup({ type }: SchemaMarkupProps) {
           "inLanguage": "en-US"
         });
 
+        // Add BreadcrumbList Schema for About page
+        baseSchema["@graph"].push({
+          "@type": "BreadcrumbList",
+          "@id": "https://neetexamcountdown.com/about-neet-2026#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://neetexamcountdown.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About NEET 2026",
+              "item": "https://neetexamcountdown.com/about-neet-2026"
+            }
+          ]
+        });
+
         // Add Article Schema for About NEET 2026
         baseSchema["@graph"].push({
           "@type": "Article",
@@ -218,6 +252,26 @@ function SchemaMarkup({ type }: SchemaMarkupProps) {
           "inLanguage": "en-US"
         });
 
+        // Add BreadcrumbList Schema for Contact page
+        baseSchema["@graph"].push({
+          "@type": "BreadcrumbList",
+          "@id": "https://neetexamcountdown.com/contact#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://neetexamcountdown.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Contact",
+              "item": "https://neetexamcountdown.com/contact"
+            }
+          ]
+        });
+
         // Add ContactPage Schema
         baseSchema["@graph"].push({
           "@type": "ContactPage",
@@ -249,6 +303,26 @@ function SchemaMarkup({ type }: SchemaMarkupProps) {
           "description": "Read our privacy policy to understand how NEET Exam Countdown protects your data. Learn about our data collection, usage, and protection practices.",
           "inLanguage": "en-US"
         });
+
+        // Add BreadcrumbList Schema for Privacy page
+        baseSchema["@graph"].push({
+          "@type": "BreadcrumbList",
+          "@id": "https://neetexamcountdown.com/privacy-policy#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://neetexamcountdown.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Privacy Policy",
+              "item": "https://neetexamcountdown.com/privacy-policy"
+            }
+          ]
+        });
         break;
 
       case 'terms':
@@ -262,6 +336,26 @@ function SchemaMarkup({ type }: SchemaMarkupProps) {
           },
           "description": "Read our terms and conditions to understand your rights and obligations when using NEET Exam Countdown. Learn about our service terms, user responsibilities, and legal agreements.",
           "inLanguage": "en-US"
+        });
+
+        // Add BreadcrumbList Schema for Terms page
+        baseSchema["@graph"].push({
+          "@type": "BreadcrumbList",
+          "@id": "https://neetexamcountdown.com/terms-and-conditions#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://neetexamcountdown.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Terms and Conditions",
+              "item": "https://neetexamcountdown.com/terms-and-conditions"
+            }
+          ]
         });
         break;
     }

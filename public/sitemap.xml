@@ -12,6 +12,7 @@
     <lastmod>2025-01-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="canonical" href="https://neetexamcountdown.com/" />
   </url>
   
   <!-- About NEET 2026 - High priority informational page -->
@@ -20,6 +21,7 @@
     <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="canonical" href="https://neetexamcountdown.com/about-neet-2026" />
   </url>
   
   <!-- Contact page -->
@@ -28,6 +30,7 @@
     <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="canonical" href="https://neetexamcountdown.com/contact" />
   </url>
   
   <!-- Privacy Policy -->
@@ -36,6 +39,7 @@
     <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="canonical" href="https://neetexamcountdown.com/privacy-policy" />
   </url>
   
   <!-- Terms and Conditions -->
@@ -44,6 +48,7 @@
     <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="canonical" href="https://neetexamcountdown.com/terms-and-conditions" />
   </url>
   
 </urlset>

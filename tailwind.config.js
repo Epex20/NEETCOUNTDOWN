@@ -13,6 +13,9 @@ export default {
   },
   theme: {
     extend: {
+      screens: {
+        'xs': '475px',
+      },
       colors: {
         gray: {
           300: '#d1d5db',
@@ -32,7 +35,12 @@ export default {
         }
       },
       spacing: {
-        '18': '4.5rem'
+        '18': '4.5rem',
+        '88': '22rem',
+        '100': '25rem'
+      },
+      fontSize: {
+        'xxs': '0.625rem'
       }
     },
   },

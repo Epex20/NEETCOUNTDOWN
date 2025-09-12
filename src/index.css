@@ -16,3 +16,48 @@ body{margin:0;line-height:inherit}
 .transition-smooth{transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}
 .btn-glass{background:linear-gradient(to right,#1f2937,#111827);border:1px solid rgba(55,65,81,0.5);backdrop-filter:blur(16px);transition:all 0.3s}
 .btn-glass:hover{transform:scale(1.05);background:linear-gradient(to right,#374151,#1f2937)}
+
+/* Mobile-specific optimizations */
+@media (max-width: 640px) {
+  .text-gradient {
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.2;
+  }
+  
+  .bg-glass {
+    background: rgba(17,24,39,0.9);
+    backdrop-filter: blur(8px);
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+}
+
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Mobile touch targets */
+@media (max-width: 768px) {
+  button, .cursor-pointer {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Custom animations */
+@keyframes slide-in-from-top {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

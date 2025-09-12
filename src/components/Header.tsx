@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Clock, Menu, X, ChevronDown } from 'lucide-react';
+import { Clock, Menu, X, ChevronDown, Home, BookOpen, Mail, Shield, FileText } from 'lucide-react';
 import RealTimeClock from './RealTimeClock';
 
 function Header() {
@@ -32,19 +32,21 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-gray-900/30 backdrop-blur-lg border-b border-gray-800 shadow-[0_0_15px_rgba(0,0,0,0.2)]">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14 sm:h-16 relative">
           {/* Logo */}
-          <div className="flex items-center gap-3 cursor-pointer absolute left-0 ml-4 transition-smooth hover:scale-105" onClick={() => handleNavigation('/')}>
+          <div className="flex items-center gap-2 sm:gap-3 cursor-pointer" onClick={() => handleNavigation('/')}>
             <img 
               src="https://i.postimg.cc/J01X0sD0/exam-time.png" 
               alt="NEET Countdown Logo" 
-              className="w-8 h-8 object-contain"
+              className="w-6 h-6 sm:w-8 sm:h-8 object-contain flex-shrink-0"
             />
-            <span className="text-xl font-bold text-gradient uppercase">NEET EXAM COUNTDOWN</span>
+            <span className="text-xs xs:text-sm sm:text-lg md:text-xl font-bold text-gradient uppercase whitespace-nowrap overflow-hidden text-ellipsis">
+              NEET EXAM COUNTDOWN
+            </span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 absolute right-0 mr-4">
+          <div className="hidden md:flex items-center space-x-8">
             <nav className="flex items-center space-x-8">
             <span
               className={`text-sm font-medium ${
@@ -111,54 +113,78 @@ function Header() {
 
           {/* Mobile Menu Button */}
           <span
-            className="md:hidden text-gray-300 absolute right-0 mr-4 cursor-pointer"
+            className="md:hidden text-gray-300 cursor-pointer flex-shrink-0 flex items-center justify-center w-8 h-8"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </span>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Full Width */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-800 bg-gray-900/30 backdrop-blur-lg">
-            <nav className="flex flex-col space-y-4">
-              <span
-                className={`text-left text-sm font-medium cursor-pointer ${
-                  isActivePath('/')
-                    ? 'text-purple-400 font-semibold'
-                    : 'text-gray-300'
-                } uppercase`}
-                onClick={() => handleNavigation('/')}
-              >
-                Home
-              </span>
-              
-              <span
-                className={`text-left text-sm font-medium cursor-pointer ${
-                  isActivePath('/about-neet-2026')
-                    ? 'text-purple-400 font-semibold'
-                    : 'text-gray-300'
-                } uppercase`}
-                onClick={() => handleNavigation('/about-neet-2026')}
-              >
-                About NEET 2026
-              </span>
-              
-              {/* Mobile Submenu Items */}
-              <div className="pl-4 space-y-3 border-l border-gray-700">
-                {submenuItems.map((item) => (
-                  <span
-                    key={item.path}
-                    className={`block text-left text-sm font-medium cursor-pointer ${
-                      isActivePath(item.path)
-                        ? 'text-purple-400 font-semibold'
-                        : 'text-gray-300'
-                    } uppercase`}
-                    onClick={() => handleNavigation(item.path)}
+          <div className="md:hidden w-full bg-glass border-t border-gray-800">
+            <nav className="py-6">
+              <div className="space-y-3 px-4">
+                <button
+                  className={`block w-full text-left px-4 py-3 text-sm font-medium uppercase rounded-lg border transition-all duration-300 ${
+                    isActivePath('/') 
+                      ? 'text-white bg-purple-400/20 border-purple-400 shadow-glow' 
+                      : 'text-gray-300 bg-glass border-gray-800 hover:bg-gray-800/70 hover:text-white hover:scale-105'
+                  }`}
+                  onClick={() => handleNavigation('/')}
+                >
+                  Home
+                </button>
+                
+                <button
+                  className={`block w-full text-left px-4 py-3 text-sm font-medium uppercase rounded-lg border transition-all duration-300 ${
+                    isActivePath('/about-neet-2026') 
+                      ? 'text-white bg-purple-400/20 border-purple-400 shadow-glow' 
+                      : 'text-gray-300 bg-glass border-gray-800 hover:bg-gray-800/70 hover:text-white hover:scale-105'
+                  }`}
+                  onClick={() => handleNavigation('/about-neet-2026')}
+                >
+                  About NEET 2026
+                </button>
+                
+                {/* Mobile Submenu */}
+                <div>
+                  <button
+                    className={`flex items-center justify-between w-full px-4 py-3 text-sm font-medium uppercase rounded-lg border transition-all duration-300 ${
+                      isSubmenuActive() 
+                        ? 'text-white bg-purple-400/20 border-purple-400 shadow-glow' 
+                        : 'text-gray-300 bg-glass border-gray-800 hover:bg-gray-800/70 hover:text-white hover:scale-105'
+                    }`}
+                    onClick={() => setIsSubmenuOpen(!isSubmenuOpen)}
                   >
-                    {item.name}
-                  </span>
-                ))}
+                    More
+                    <ChevronDown className={`w-4 h-4 transition-transform ${isSubmenuOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  
+                  {/* Mobile Submenu Items */}
+                  {isSubmenuOpen && (
+                    <div className="mt-2 space-y-2 pl-4">
+                      {submenuItems.map((item) => (
+                        <button
+                          key={item.path}
+                          className={`block w-full text-left px-4 py-2 text-sm uppercase rounded-lg border transition-all duration-300 ${
+                            isActivePath(item.path) 
+                              ? 'text-white bg-purple-400/20 border-purple-400 shadow-glow' 
+                              : 'text-gray-300 bg-glass border-gray-700 hover:bg-gray-800/50 hover:text-white hover:scale-105'
+                          }`}
+                          onClick={() => handleNavigation(item.path)}
+                        >
+                          {item.name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                
+                {/* Mobile Real Time Clock */}
+                <div className="mt-6 pt-4 border-t border-gray-700">
+                  <RealTimeClock />
+                </div>
               </div>
             </nav>
           </div>

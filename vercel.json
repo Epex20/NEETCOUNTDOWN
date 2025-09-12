@@ -4,6 +4,21 @@
   "outputDirectory": "dist",
   "routes": [
     {
+      "src": "^/neet-2026$",
+      "status": 301,
+      "headers": { "Location": "/about-neet-2026" }
+    },
+    {
+      "src": "^/www\\.neetexamcountdown\\.com/(.*)$",
+      "status": 301,
+      "headers": { "Location": "https://neetexamcountdown.com/$1" }
+    },
+    {
+      "src": "^/http://neetexamcountdown\\.com/(.*)$",
+      "status": 301,
+      "headers": { "Location": "https://neetexamcountdown.com/$1" }
+    },
+    {
       "src": "^/sitemap.xml",
       "dest": "/sitemap.xml"
     },
