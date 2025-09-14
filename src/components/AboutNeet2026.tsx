@@ -44,7 +44,7 @@ function AboutNeet2026() {
           <div className="grid md:grid-cols-2 gap-4 text-sm sm:text-base">
             <div className="flex justify-between py-2 border-b border-gray-700">
               <span>📅 Exam Date:</span>
-              <span className="font-semibold text-purple-300">03 May 2026 (Saturday)</span>
+              <span className="font-semibold text-purple-300">03 May 2026 (SUNDAY)</span>
             </div>
             <div className="flex justify-between py-2 border-b border-gray-700">
               <span>⏱️ Duration:</span>
