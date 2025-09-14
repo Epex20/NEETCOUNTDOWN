@@ -6,7 +6,12 @@
     {
       "src": "^/neet-2026$",
       "status": 301,
-      "headers": { "Location": "/about-neet-2026" }
+      "headers": { "Location": "/about/neet-2026" }
+    },
+    {
+      "src": "^/about-neet-2026$",
+      "status": 301,
+      "headers": { "Location": "/about/neet-2026" }
     },
     {
       "src": "^/www\\.neetexamcountdown\\.com/(.*)$",

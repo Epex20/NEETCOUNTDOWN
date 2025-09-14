@@ -15,13 +15,22 @@
     <xhtml:link rel="canonical" href="https://neetexamcountdown.com/" />
   </url>
   
-  <!-- About NEET 2026 - High priority informational page -->
+  <!-- About Us - High priority informational page -->
   <url>
-    <loc>https://neetexamcountdown.com/about-neet-2026</loc>
+    <loc>https://neetexamcountdown.com/about/us</loc>
     <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="canonical" href="https://neetexamcountdown.com/about-neet-2026" />
+    <xhtml:link rel="canonical" href="https://neetexamcountdown.com/about/us" />
+  </url>
+
+  <!-- About NEET 2026 - High priority informational page -->
+  <url>
+    <loc>https://neetexamcountdown.com/about/neet-2026</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="canonical" href="https://neetexamcountdown.com/about/neet-2026" />
   </url>
   
   <!-- Contact page -->

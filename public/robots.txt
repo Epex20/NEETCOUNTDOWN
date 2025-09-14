@@ -9,6 +9,8 @@ Disallow: /api/
 
 # Allow all search engines to crawl important pages
 Allow: /
+Allow: /about/us
+Allow: /about/neet-2026
 Allow: /about-neet-2026
 Allow: /contact
 Allow: /privacy-policy

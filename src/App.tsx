@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { BookOpen, Clock, Calendar, Target, Award } from 'lucide-react';
+import { BookOpen, Clock, Calendar, Target, Award, ChevronDown } from 'lucide-react';
 
 // Lazy load components for better performance
 const Header = React.lazy(() => import('./components/Header'));
@@ -12,6 +12,7 @@ const PrivacyPolicy = React.lazy(() => import('./components/PrivacyPolicy'));
 const TermsAndConditions = React.lazy(() => import('./components/TermsAndConditions'));
 const Contact = React.lazy(() => import('./components/Contact'));
 const AboutNeet2026 = React.lazy(() => import('./components/AboutNeet2026'));
+const AboutUs = React.lazy(() => import('./components/AboutUs'));
 
 function Home() {
   const [timeLeft, setTimeLeft] = React.useState({
@@ -193,7 +194,7 @@ function Home() {
 
 // FAQ Component with dropdown functionality
 function FAQSection() {
-  const [openFAQ, setOpenFAQ] = React.useState<number | null>(null);
+  const [openFAQs, setOpenFAQs] = React.useState<Set<number>>(new Set());
 
   const faqs = [
     {
@@ -223,7 +224,15 @@ function FAQSection() {
   ];
 
   const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index);
+    setOpenFAQs(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
   };
 
   return (
@@ -247,12 +256,10 @@ function FAQSection() {
                   <h3 className="text-sm sm:text-base font-medium text-white pr-4 leading-tight">
                     {faq.question}
                   </h3>
-                  <span className="text-purple-400 flex-shrink-0">
-                    {openFAQ === index ? '−' : '+'}
-                  </span>
+                  <ChevronDown className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform ${openFAQs.has(index) ? 'rotate-180' : ''}`} />
                 </div>
               </button>
-              {openFAQ === index && (
+              {openFAQs.has(index) && (
                 <div className="px-4 py-4 bg-gray-900/30 border-t border-gray-700">
                   <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                     {faq.answer}
@@ -279,7 +286,8 @@ function App() {
         }><main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about-neet-2026" element={<AboutNeet2026 />} />
+            <Route path="/about/us" element={<AboutUs />} />
+            <Route path="/about/neet-2026" element={<AboutNeet2026 />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/contact" element={<Contact />} />
