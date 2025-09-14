@@ -103,16 +103,16 @@ function Header() {
                 }}
               >
                 About
-                <ChevronDown className={`w-4 h-4 ${isAboutMenuOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-4 h-4 transition-all duration-300 ${isAboutMenuOpen ? 'rotate-180' : ''}`} />
               </span>
               
               {/* About Dropdown */}
               {isAboutMenuOpen && (
-                <div className="absolute top-full right-0 mt-2 w-48 bg-gray-900 border border-gray-800 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.3)] py-2">
+                <div className="absolute top-full right-0 mt-2 w-48 bg-gray-900 border border-gray-800 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.3)] py-2 morph-transition dropdown-enter dropdown-enter-active">
                   {aboutMenuItems.map((item) => (
                     <span
                       key={item.path}
-                      className="block w-full text-left px-4 py-2 text-sm font-medium cursor-pointer text-gray-300 hover:text-white uppercase"
+                      className="block w-full text-left px-4 py-2 text-sm font-medium cursor-pointer text-gray-300 hover:text-white uppercase transition-all duration-200 hover:bg-gray-800/50"
                       onClick={() => handleNavigation(item.path)}
                     >
                       {item.name}
@@ -132,19 +132,19 @@ function Header() {
                 }}
               >
                 More
-                <ChevronDown className={`w-4 h-4 ${isSubmenuOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-4 h-4 transition-all duration-300 ${isSubmenuOpen ? 'rotate-180' : ''}`} />
               </span>
               
               {/* Submenu Dropdown */}
               {isSubmenuOpen && (
-                <div className="absolute top-full right-0 mt-2 w-48 bg-gray-900 border border-gray-800 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.3)] py-2">
+                <div className="absolute top-full right-0 mt-2 w-48 bg-gray-900 border border-gray-800 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.3)] py-2 morph-transition dropdown-enter dropdown-enter-active">
                   {submenuItems.map((item) => (
                     <span
                       key={item.path}
-                      className={`block w-full text-left px-4 py-2 text-sm font-medium cursor-pointer ${
+                      className={`block w-full text-left px-4 py-2 text-sm font-medium cursor-pointer transition-all duration-200 hover:bg-gray-800/50 ${
                         isActivePath(item.path)
                           ? 'text-purple-400 font-semibold bg-purple-400/10'
-                          : 'text-gray-300'
+                          : 'text-gray-300 hover:text-white'
                       } uppercase`}
                       onClick={() => handleNavigation(item.path)}
                     >

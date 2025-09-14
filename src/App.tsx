@@ -249,23 +249,23 @@ function FAQSection() {
           {faqs.map((faq, index) => (
             <div key={index} className="border border-gray-700 rounded-lg overflow-hidden">
               <button
-                className="w-full px-4 py-4 text-left bg-gray-800/50 hover:bg-gray-800/70 transition-colors focus:outline-none focus:bg-gray-800/70"
+                className="w-full px-4 py-4 text-left bg-gray-800/50 hover:bg-gray-800/70 transition-all duration-300 focus:outline-none focus:bg-gray-800/70 morph-transition"
                 onClick={() => toggleFAQ(index)}
               >
                 <div className="flex justify-between items-center">
                   <h3 className="text-sm sm:text-base font-medium text-white pr-4 leading-tight">
                     {faq.question}
                   </h3>
-                  <ChevronDown className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform ${openFAQs.has(index) ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-all duration-300 ${openFAQs.has(index) ? 'rotate-180' : ''}`} />
                 </div>
               </button>
-              {openFAQs.has(index) && (
+              <div className={`overflow-hidden transition-all duration-400 ${openFAQs.has(index) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="px-4 py-4 bg-gray-900/30 border-t border-gray-700">
                   <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                    {faq.answer}
+                    {openFAQs.has(index) ? faq.answer : ''}
                   </p>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>

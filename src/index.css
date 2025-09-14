@@ -17,6 +17,23 @@ body{margin:0;line-height:inherit}
 .btn-glass{background:linear-gradient(to right,#1f2937,#111827);border:1px solid rgba(55,65,81,0.5);backdrop-filter:blur(16px);transition:all 0.3s;will-change:auto}
 .btn-glass:hover{transform:scale(1.05);background:linear-gradient(to right,#374151,#1f2937);will-change:auto}
 
+/* Enhanced Dropdown Transitions */
+.dropdown-enter{opacity:0;transform:translateY(-10px) scale(0.95);transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1)}
+.dropdown-enter-active{opacity:1;transform:translateY(0) scale(1)}
+.dropdown-exit{opacity:1;transform:translateY(0) scale(1);transition:all 0.2s cubic-bezier(0.4,0,1,1)}
+.dropdown-exit-active{opacity:0;transform:translateY(-10px) scale(0.95)}
+
+/* FAQ Smooth Expand Animation */
+.faq-content-enter{max-height:0;opacity:0;overflow:hidden;transition:all 0.4s cubic-bezier(0.4,0,0.2,1)}
+.faq-content-enter-active{max-height:500px;opacity:1}
+.faq-content-exit{max-height:500px;opacity:1;overflow:hidden;transition:all 0.3s cubic-bezier(0.4,0,1,1)}
+.faq-content-exit-active{max-height:0;opacity:0}
+
+/* Smooth morph transitions */
+.morph-transition{transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);will-change:transform,opacity}
+.scale-enter{transform:scale(0.9);opacity:0}
+.scale-enter-active{transform:scale(1);opacity:1}
+
 /* Mobile-specific optimizations */
 @media (max-width: 640px) {
   .text-gradient {
