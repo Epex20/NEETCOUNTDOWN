@@ -63,9 +63,12 @@ function Header() {
           {/* Logo */}
           <div className="flex items-center gap-2 sm:gap-3 cursor-pointer" onClick={() => handleNavigation('/')}>
             <img 
-              src="https://i.postimg.cc/J01X0sD0/exam-time.png" 
+              src="/new-favicon.svg" 
               alt="NEET Countdown Logo" 
               className="w-6 h-6 sm:w-8 sm:h-8 object-contain flex-shrink-0"
+              width="32"
+              height="32"
+              loading="eager"
             />
             <span className="text-xs xs:text-sm sm:text-lg md:text-xl font-bold text-gradient uppercase whitespace-nowrap overflow-hidden text-ellipsis">
               NEET EXAM COUNTDOWN
