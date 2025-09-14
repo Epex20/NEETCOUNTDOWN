@@ -118,7 +118,7 @@ function AboutNeet2026() {
             </div>
             <div className="flex justify-between items-center py-2 border-b border-gray-700">
               <span className="text-sm sm:text-base font-bold">📅 Examination Date</span>
-              <span className="text-sm sm:text-base font-bold text-white">03 May 2026 (Saturday)</span>
+              <span className="text-sm sm:text-base font-bold text-white">03 May 2026 (SUNDAY)</span>
             </div>
             <div className="flex justify-between items-center py-2">
               <span className="text-sm sm:text-base">📊 Result Declaration</span>
@@ -591,7 +591,7 @@ function AboutFAQSection() {
   const faqs = [
     {
       question: "What is the NEET 2026 exam date?",
-      answer: "The NEET 2026 exam is scheduled for May 3, 2026 (Saturday). The exam will be conducted from 2:00 PM to 5:00 PM (IST) across various centers in India and abroad."
+      answer: "The NEET 2026 exam is scheduled for May 3, 2026 (Sunday). The exam will be conducted from 2:00 PM to 5:00 PM (IST) across various centers in India and abroad."). The exam will be conducted from 2:00 PM to 5:00 PM (IST) across various centers in India and abroad."
     },
     {
       question: "When will the NEET 2026 application form be released?",
