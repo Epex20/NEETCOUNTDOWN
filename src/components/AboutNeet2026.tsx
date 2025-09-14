@@ -118,7 +118,7 @@ function AboutNeet2026() {
             </div>
             <div className="flex justify-between items-center py-2 border-b border-gray-700">
               <span className="text-sm sm:text-base font-bold">📅 Examination Date</span>
-              <span className="text-sm sm:text-base font-bold text-white">03 May 2026 (SUNDAY)</span>
+              <span className="text-sm sm:text-base font-bold text-white">03 May 2026 (Sunday)</span>
             </div>
             <div className="flex justify-between items-center py-2">
               <span className="text-sm sm:text-base">📊 Result Declaration</span>
