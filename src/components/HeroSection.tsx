@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 interface HeroSectionProps {
   timeLeft: {
@@ -11,15 +10,6 @@ interface HeroSectionProps {
 }
 
 function HeroSection({ timeLeft }: HeroSectionProps) {
-  const navigate = useNavigate();
-  const [isAndroid, setIsAndroid] = React.useState(() => {
-    // Check if the device is Android immediately
-    if (typeof navigator !== 'undefined') {
-      const userAgent = navigator.userAgent.toLowerCase();
-      return /android/.test(userAgent);
-    }
-    return false;
-  });
 
   return (
     <div className="relative min-h-screen flex items-center justify-center px-2 sm:px-4">
@@ -35,39 +25,32 @@ function HeroSection({ timeLeft }: HeroSectionProps) {
         </div>
 
         {/* Countdown Timer */}
-        <div className={`max-w-5xl mx-auto mb-8 sm:mb-12 transition-smooth ${
-          isAndroid 
-            ? 'flex overflow-x-auto gap-3 sm:gap-4 pb-4 px-2' 
-            : 'grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 px-2 sm:px-4'
-        }`}>
-          <div className={`bg-glass rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow ${
-            isAndroid ? 'min-w-[120px] sm:min-w-[160px] flex-shrink-0' : ''
-          }`}>
-            <div className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
+        <div className="countdown-container flex md:grid md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 overflow-x-auto md:overflow-visible px-2 sm:px-4 pb-2 md:pb-0 max-w-6xl mx-auto mb-8 sm:mb-12"
+             style={{ scrollSnapType: 'x mandatory' }}>
+          <div className="countdown-item bg-glass rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow min-w-[85px] sm:min-w-[120px] md:min-w-0 flex-shrink-0 transition-all duration-300 hover:scale-105"
+               style={{ scrollSnapAlign: 'center' }}>
+            <div className="text-lg sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
               {timeLeft.days}
             </div>
             <div className="text-xs sm:text-sm md:text-base uppercase tracking-wide text-gray-300 font-semibold">Days</div>
           </div>
-          <div className={`bg-glass rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow ${
-            isAndroid ? 'min-w-[120px] sm:min-w-[160px] flex-shrink-0' : ''
-          }`}>
-            <div className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
+          <div className="countdown-item bg-glass rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow min-w-[85px] sm:min-w-[120px] md:min-w-0 flex-shrink-0 transition-all duration-300 hover:scale-105"
+               style={{ scrollSnapAlign: 'center' }}>
+            <div className="text-lg sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
               {timeLeft.hours}
             </div>
             <div className="text-xs sm:text-sm md:text-base uppercase tracking-wide text-gray-300 font-semibold">Hours</div>
           </div>
-          <div className={`bg-glass rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow ${
-            isAndroid ? 'min-w-[120px] sm:min-w-[160px] flex-shrink-0' : ''
-          }`}>
-            <div className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
+          <div className="countdown-item bg-glass rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow min-w-[85px] sm:min-w-[120px] md:min-w-0 flex-shrink-0 transition-all duration-300 hover:scale-105"
+               style={{ scrollSnapAlign: 'center' }}>
+            <div className="text-lg sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
               {timeLeft.minutes}
             </div>
             <div className="text-xs sm:text-sm md:text-base uppercase tracking-wide text-gray-300 font-semibold">Minutes</div>
           </div>
-          <div className={`bg-glass rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow ${
-            isAndroid ? 'min-w-[120px] sm:min-w-[160px] flex-shrink-0' : ''
-          }`}>
-            <div className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
+          <div className="countdown-item bg-glass rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow min-w-[85px] sm:min-w-[120px] md:min-w-0 flex-shrink-0 transition-all duration-300 hover:scale-105"
+               style={{ scrollSnapAlign: 'center' }}>
+            <div className="text-lg sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
               {timeLeft.seconds}
             </div>
             <div className="text-xs sm:text-sm md:text-base uppercase tracking-wide text-gray-300 font-semibold">Seconds</div>
