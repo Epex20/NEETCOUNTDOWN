@@ -25,32 +25,27 @@ function HeroSection({ timeLeft }: HeroSectionProps) {
         </div>
 
         {/* Countdown Timer */}
-        <div className="countdown-container flex md:grid md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 overflow-x-auto md:overflow-visible px-2 sm:px-4 pb-2 md:pb-0 max-w-6xl mx-auto mb-8 sm:mb-12"
-             style={{ scrollSnapType: 'x mandatory' }}>
-          <div className="countdown-item bg-glass rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow min-w-[85px] sm:min-w-[120px] md:min-w-0 flex-shrink-0 transition-all duration-300 hover:scale-105"
-               style={{ scrollSnapAlign: 'center' }}>
-            <div className="text-lg sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
+        <div className="flex md:grid md:grid-cols-4 gap-2 sm:gap-3 md:gap-6 px-2 sm:px-4 max-w-6xl mx-auto mb-8 sm:mb-12 justify-center">
+          <div className="bg-glass rounded-lg sm:rounded-xl p-2 sm:p-4 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow flex-1 transition-all duration-300 hover:scale-105">
+            <div className="text-lg sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
               {timeLeft.days}
             </div>
             <div className="text-xs sm:text-sm md:text-base uppercase tracking-wide text-gray-300 font-semibold">Days</div>
           </div>
-          <div className="countdown-item bg-glass rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow min-w-[85px] sm:min-w-[120px] md:min-w-0 flex-shrink-0 transition-all duration-300 hover:scale-105"
-               style={{ scrollSnapAlign: 'center' }}>
-            <div className="text-lg sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
+          <div className="bg-glass rounded-lg sm:rounded-xl p-2 sm:p-4 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow flex-1 transition-all duration-300 hover:scale-105">
+            <div className="text-lg sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
               {timeLeft.hours}
             </div>
             <div className="text-xs sm:text-sm md:text-base uppercase tracking-wide text-gray-300 font-semibold">Hours</div>
           </div>
-          <div className="countdown-item bg-glass rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow min-w-[85px] sm:min-w-[120px] md:min-w-0 flex-shrink-0 transition-all duration-300 hover:scale-105"
-               style={{ scrollSnapAlign: 'center' }}>
-            <div className="text-lg sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
+          <div className="bg-glass rounded-lg sm:rounded-xl p-2 sm:p-4 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow flex-1 transition-all duration-300 hover:scale-105">
+            <div className="text-lg sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
               {timeLeft.minutes}
             </div>
             <div className="text-xs sm:text-sm md:text-base uppercase tracking-wide text-gray-300 font-semibold">Minutes</div>
           </div>
-          <div className="countdown-item bg-glass rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow min-w-[85px] sm:min-w-[120px] md:min-w-0 flex-shrink-0 transition-all duration-300 hover:scale-105"
-               style={{ scrollSnapAlign: 'center' }}>
-            <div className="text-lg sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
+          <div className="bg-glass rounded-lg sm:rounded-xl p-2 sm:p-4 md:p-6 lg:p-8 text-center border border-gray-800 shadow-glow flex-1 transition-all duration-300 hover:scale-105">
+            <div className="text-lg sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 text-gradient">
               {timeLeft.seconds}
             </div>
             <div className="text-xs sm:text-sm md:text-base uppercase tracking-wide text-gray-300 font-semibold">Seconds</div>
