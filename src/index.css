@@ -56,10 +56,29 @@ body{margin:0;line-height:inherit}
   }
 }
 
-/* Prevent horizontal scroll */
+/* Prevent horizontal scroll and hide scrollbars */
 html, body {
   overflow-x: hidden;
   width: 100%;
+}
+
+/* Hide scrollbars completely */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 /* Mobile touch targets */
