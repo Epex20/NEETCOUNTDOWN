@@ -36,10 +36,6 @@
       "dest": "/favicon.ico"
     },
     {
-      "src": "^/.*\\.svg$",
-      "dest": "/$0"
-    },
-    {
       "src": "^/assets/(.*)",
       "dest": "/assets/$1"
     },
