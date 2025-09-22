@@ -3,12 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { BookOpen, Clock, Calendar, Target, Award, ChevronDown } from 'lucide-react';
 
-// Import critical components directly for faster initial render
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-
-// Lazy load non-critical components for better performance
+// Lazy load components for better performance
+const Header = React.lazy(() => import('./components/Header'));
 const Footer = React.lazy(() => import('./components/Footer'));
+const HeroSection = React.lazy(() => import('./components/HeroSection'));
 const SchemaMarkup = React.lazy(() => import('./components/SchemaMarkup'));
 const PrivacyPolicy = React.lazy(() => import('./components/PrivacyPolicy'));
 const TermsAndConditions = React.lazy(() => import('./components/TermsAndConditions'));
