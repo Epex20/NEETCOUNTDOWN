@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Clock, Menu, X, ChevronDown, Home, BookOpen, Mail, Shield, FileText } from 'lucide-react';
 import RealTimeClock from './RealTimeClock';
+import logoSvg from '/new-favicon.svg';
 
 function Header() {
   const navigate = useNavigate();
@@ -62,14 +63,24 @@ function Header() {
         <div className="flex items-center justify-between h-14 sm:h-16 relative">
           {/* Logo */}
           <div className="flex items-center gap-2 sm:gap-3 cursor-pointer" onClick={() => handleNavigation('/')}>
-            <img 
-              src="/new-favicon.svg" 
-              alt="NEET Countdown Logo" 
-              className="w-6 h-6 sm:w-8 sm:h-8 object-contain flex-shrink-0"
-              width="32"
-              height="32"
-              loading="eager"
-            />
+            <div className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0 relative">
+              <img 
+                src={logoSvg} 
+                alt="NEET Countdown Logo" 
+                className="w-full h-full object-contain"
+                width="32"
+                height="32"
+                loading="eager"
+                onError={(e) => {
+                  // Fallback to Clock icon if image fails to load
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const fallback = target.nextElementSibling as HTMLElement;
+                  if (fallback) fallback.style.display = 'block';
+                }}
+              />
+              <Clock className="w-full h-full text-blue-500 hidden" />
+            </div>
             <span className="text-xs xs:text-sm sm:text-lg md:text-xl font-bold text-gradient uppercase whitespace-nowrap overflow-hidden text-ellipsis">
               NEET EXAM COUNTDOWN
             </span>
